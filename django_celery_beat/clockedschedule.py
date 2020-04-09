@@ -34,7 +34,7 @@ class clocked(schedules.BaseSchedule):
         remaining_s = max(rem_delta.total_seconds(), 0)
         if remaining_s == 0:
             if self.model:
-                self.model.enabled = False
+                # self.model.enabled = False
                 self.model.save()
             return schedstate(is_due=True, next=None)
         return schedstate(is_due=False, next=remaining_s)
